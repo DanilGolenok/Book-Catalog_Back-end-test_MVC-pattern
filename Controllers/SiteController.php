@@ -9,11 +9,20 @@ class SiteController extends Controller
 
     public function index($get) 
     {
-        return $this->render('index');
+        $externalFiles = [
+            'css' => [
+                '../Web/css/main.css',
+            ],
+            'js' => [
+                '../Web/js/main.js',
+            ]
+        ];
+
+        return $this->render('index', $externalFiles);
     }
 
     public function about($get) 
     {
-        echo "";
+        return $this->render('about');
     }
 }
